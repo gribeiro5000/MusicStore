@@ -1,0 +1,80 @@
+﻿@model MusicStore.Models.UserModel
+@{
+    ViewBag.Title = "ConfirmData";
+}
+
+<h2>Confirm your Data</h2>
+
+@using (Html.BeginForm("ConfirmData", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>First Name</label>
+        @Html.HiddenFor(model => model.FirstName)
+        @Html.DisplayFor(model => model.FirstName)
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        @Html.HiddenFor(model => model.LastName)
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+    <div class="form-group">
+        <label>Company</label>
+        @Html.HiddenFor(model => model.Company)
+        @Html.DisplayFor(model => model.Company)
+    </div>
+    <div class="form-group">
+        <label>Country</label>
+        @Html.HiddenFor(model => model.Country)
+        @Html.DisplayFor(model => model.Country)
+    </div>
+    <div class="form-group">
+        <label>State</label>
+        @Html.HiddenFor(model => model.State)
+        @Html.DisplayFor(model => model.State)
+    </div>
+    <div class="form-group">
+        <label>City</label>
+        @Html.HiddenFor(model => model.City)
+        @Html.DisplayFor(model => model.City)
+    </div>
+    <div class="form-group">
+        <label>Address</label>
+        @Html.HiddenFor(model => model.Address)
+        @Html.DisplayFor(model => model.Address)
+    </div>
+    <div class="form-group">
+        <label>Postal Code</label>
+        @Html.HiddenFor(model => model.PostalCode)
+        @Html.DisplayFor(model => model.PostalCode)
+    </div>
+    <div class="form-group">
+        <label>Phone</label>
+        @Html.HiddenFor(model => model.Phone)
+        @Html.DisplayFor(model => model.Phone)
+    </div>
+    <div class="form-group">
+        <label>Fax</label>
+        @Html.HiddenFor(model => model.Fax)
+        @Html.DisplayFor(model => model.Fax)
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        @Html.HiddenFor(model => model.Email)
+        @Html.DisplayFor(model => model.Email)
+    </div>
+    <div class="form-group">
+        <label>Username</label>
+        @Html.HiddenFor(model => model.Username)
+        @Html.DisplayFor(model => model.Username)
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        @Html.HiddenFor(model => model.Password)
+        @Html.DisplayFor(model => model.Password)
+    </div>
+
+    <div class="form-group">
+        @Html.ActionLink("Return", "SignUp")
+        <input type="submit" class="btn btn-primary" value="Confirm" style="margin-left: 30px"/>
+    </div>
+}

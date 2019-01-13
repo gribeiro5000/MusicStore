@@ -1,0 +1,39 @@
+﻿@model MusicStore.Models.UserModel
+@{
+    ViewBag.Title = "Menu";
+    Layout = "~/Views/Shared/_LayoutStore.cshtml";
+}
+
+    <h2 style="text-align:center;">Welcome, @Html.DisplayFor(model => model.FirstName)</h2>
+
+    <div class="row justify-content-center" style="margin-top:50px;">
+        <div class="card-deck">
+            <div class="card" style="width: 18rem">
+                <img class="card-img-top" src="~/Content/img/michael jackson.jpg" alt="card image cap" />
+                <div class="card-body">
+                    <h5 class="card-title">Artists</h5>
+                    <p class="card-text">choose an Artist</p>
+                    @Html.ActionLink("Go", "Artist", "Store", new { @class = "btn btn-primary" })
+                </div>
+            </div>
+            <div class="card" style="width: 18rem">
+                <img class="card-img-top" src="~/Content/img/cropped-1440-900-143357.jpg" alt="card image cap" />
+                <div class="card-body">
+                    <h5 class="card-title">Album</h5>
+                    <p class="card-text">choose an Album</p>
+                    @Html.ActionLink("Go", "Albums", "Store", new { @class = "btn btn-primary" })
+                </div>
+            </div>
+            <div class="card" style="width: 18rem">
+                <img class="card-img-top" src="~/Content/img/pinkfloyd.jpg" alt="card image cap" />
+                <div class="card-body">
+                    <h5 class="card-title">Genre</h5>
+                    <p class="card-text">choose a Genre</p>
+                    @Html.ActionLink("Go", "Genres", "Store", new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+

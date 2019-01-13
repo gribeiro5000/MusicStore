@@ -1,0 +1,27 @@
+﻿@model MusicStore.Models.UserModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+    <div class="form-group">
+        <label>Username</label>
+        @Html.TextBoxFor(model => model.Username, new { @class = "form-control" })
+        <div>
+            @Html.ValidationMessageFor(model => model.Username)
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="label-Password">Password</label>
+        @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+        <div>
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Enter" />
+}

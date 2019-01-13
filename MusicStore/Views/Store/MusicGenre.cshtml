@@ -1,0 +1,25 @@
+﻿@model MusicStore.Models.GenreModel
+@{
+    ViewBag.Title = "MusicGenre";
+    Layout = "~/Views/Shared/_LayoutStore.cshtml";
+}
+
+<h2 style="text-align:center">@Html.DisplayFor(model => model.Name)</h2>
+
+<div class="row justify-content-center" style="margin-top: 50px;">
+    @{
+        foreach (var track in Model.tracksModel)
+        {
+            <div class="card-deck" style="margin: 10px;">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Content/img/wallpaper all.jpg" alt="card img cap" />
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(model => track.Name)</h5>
+                        @Html.ActionLink("Go", "Track", "Store", new { @idTrack = track.TrackId }, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+

@@ -1,0 +1,33 @@
+﻿@model MusicStore.Models.TrackModel
+@{
+    ViewBag.Title = "Track";
+    Layout = "~/Views/Shared/_LayoutStore.cshtml";
+}
+
+<h2 style="text-align:center">Track</h2>
+
+<div class="card">
+    <h5 class="card-header">@Html.DisplayFor(model => model.Name)</h5>
+    <div class="card-body">
+        <p class="card-text">Artist: @Html.DisplayFor(model => model.Composer)</p>
+        <p class="card-text">Album: @Html.DisplayFor(model => model.AlbumName)</p>
+        <p class="card-text">Genre: @Html.DisplayFor(model => model.GenreName)</p>
+        <p class="card-text" id="lol" onchange="changeDuration()">Duration: @Html.DisplayFor(model => model.MilliSeconds)</p>
+        <p class="card-text">Size: @Html.DisplayFor(model => model.Bytes)</p>
+        <p class="card-text">Price: @Html.DisplayFor(model => model.UnitPrice)</p>
+        @Html.ActionLink("Buy", "", "Store", new { @class = "btn btn-primary" })
+    </div>
+</div>
+
+<script>
+    function changeDuration() {
+        console.log("ENTROUUUU");
+        console.log(this);
+    }
+    function duration()
+    {
+        var i = document.getElementById("duration");
+        
+        i.onchange = changeDuration;
+    }
+</script>

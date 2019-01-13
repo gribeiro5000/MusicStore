@@ -1,0 +1,93 @@
+﻿@model MusicStore.Models.UserModel
+@{
+    ViewBag.Title = "SignUp";
+}
+
+<h2>Sign-up</h2>
+
+@using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+        <div class="form-row">
+            <div class="form-group" style="margin-right: 20px;">
+                <label>First Name</label>
+                @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control" })
+                <div>
+                    @Html.ValidationMessageFor(model => model.FirstName)
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                @Html.TextBoxFor(model => model.LastName, new { @class = "form-control" })
+                <div>
+                    @Html.ValidationMessageFor(model => model.LastName)
+                </div>
+            </div>
+        </div>
+        <div class="form-group" style="margin-top: 30px;">
+            <label>Company</label>
+            @Html.TextBoxFor(model => model.Company, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Company)
+        </div>
+        <div class="form-row" style="margin-top: 30px;">
+            <div class="form-group" style="margin-right:20px;">
+                <label>Country</label>
+                @Html.TextBoxFor(model => model.Country, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Country)
+            </div>
+            <div class="form-group">
+                <label>State</label>
+                @Html.TextBoxFor(model => model.State, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.State)
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group" style="margin-right:20px;">
+                <label>City</label>
+                @Html.TextBoxFor(model => model.City, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.City)
+            </div>
+            <div class="form-group">
+                <label>Address</label>
+                @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+        </div>
+        <div class="form-group" style="margin-top: 30px;">
+            <label>Postal Code</label>
+            @Html.TextBoxFor(model => model.PostalCode, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.PostalCode)
+        </div>
+        <div class="form-group" style="margin-top: 30px;">
+            <label>Phone</label>
+            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", placeholder = "(12) 12345-1234" })
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+        <div class="form-group" style="margin-top: 30px;">
+            <label>Fax</label>
+            @Html.TextBoxFor(model => model.Fax, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Fax)
+        </div>
+        <div class="form-group" style="margin-top: 30px;">
+            <label>Email</label>
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        <div class="form-group" style="margin-top: 30px;">
+            <label>Username</label>
+            @Html.TextBoxFor(model => model.Username, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Username)
+        </div>
+        <div class="form-group" style="margin-top: 30px">
+            <label>Password</label>
+            @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+        <div class="form-group" style="margin-top: 30px">
+            <label>Repeat Password</label>
+            @Html.PasswordFor(model => model.RepeatPassword, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.RepeatPassword)
+        </div>
+
+    <input type="submit" class="btn btn-primary" value="Sign-up" />
+}

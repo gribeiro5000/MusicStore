@@ -1,0 +1,24 @@
+﻿@model List<MusicStore.Models.AlbumModel>
+@{
+    ViewBag.Title = "Albums";
+    Layout = "~/Views/Shared/_LayoutStore.cshtml";
+}
+
+<h2 style="text-align:center;">Albums</h2>
+
+<div class="row justify-content-center" style="margin-top: 50px;">
+    @{
+        foreach (var album in Model)
+        {
+            <div class="card-deck" style="margin: 10px;">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Content/img/wallpaper all.jpg" alt="card img cap" />
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(model => album.Title)</h5>
+                        @Html.ActionLink("Go", "AlbumTracks", "Store", new { idAlbum = album.AlbumId }, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
